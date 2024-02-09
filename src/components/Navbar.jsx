@@ -48,10 +48,10 @@ const Navbar = () => {
           {nav?<FaTimes size={30}/>:<FaBars size={30}/>}
         </div>
         {nav &&(
-           <ul className='flex  flex-col w-full h-screen justify-center items-center absolute top-0 left-0 bg-gradient-to-b from-black to-gray-800 '>
+           <ul className='flex  flex-col w-full h-screen justify-center items-center  absolute  right-0 top-0 bg-gradient-to-b from-black to-gray-800 '>
            {links.map(({id,link})=>(
              <li key={id} className=' px-4 py-6 text-3xl cursor-pointer text-gray-500'>
-                 <Link to={link} smooth  duration={500} > {link}  </Link> 
+                 <Link to={link} smooth  duration={500} onClick={()=>{setNav(!nav)}}> {link}  </Link> 
              </li>
            ))}
          </ul>

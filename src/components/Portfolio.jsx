@@ -1,73 +1,90 @@
-import React from 'react'
-import arrayDestruct from "../assets/portfolio/arrayDestruct.jpg"
-import installNode from "../assets/portfolio/installNode.jpg"
-import navbar from "../assets/portfolio/navbar.jpg"
-import reactWeather from "../assets/portfolio/reactWeather.jpg"
-import reactPortfolio from "../assets/portfolio/reactPortfolio2.jpg"
-import  reactSmooth from "../assets/portfolio/reactSmooth.jpg"
+import React from "react";
+
+import ECOMMERCE from "../assets/portfolio/E-commerce.jpg"
+import NIKE from "../assets/portfolio/NIKE1.jpeg"
+import netflix from "../assets/portfolio/Netflix.jpg";
+import reactWeather from "../assets/portfolio/reactWeather.jpg";
+import RestaurantPage from "../assets/portfolio/Capture.PNG";
+import CRUD from "../assets/portfolio/MERN-BOOK STORE.jpg"
+
 const Portfolio = () => {
-
-    const port=[
-        {
-            id:1,
-            src:reactWeather
-        },
+  const portfolios = [
+    {
+      id: 1,
+      src: CRUD,
+      Demo:"",
+      Code:"https://github.com/dhivagarpriyan/BOOK-STORE-MERN-APP"
       
-        {
-            id:2,
-            src:installNode
-        },
+    },
+    {
+      id: 2,
+      src: RestaurantPage,
+      Demo:"https://fluffy-babka-1b9a64.netlify.app",
+      Code:"https://github.com/dhivagarpriyan/Restaurant-frontend-page"
+    },
+    {
+      id: 3,
+      src: netflix,
+      Demo:"",
+      Code:"https://github.com/dhivagarpriyan/Netflix_clone"
+    },
+    {
+      id: 4,
+      src: ECOMMERCE,
+      Demo:"",
+      Code:"https://github.com/dhivagarpriyan/MINI-ECOMMERCE"
+    },
+    {
+      id: 5,
+      src:NIKE,
+      Demo:"https://magenta-croissant-86843f.netlify.app/",
+      Code:"https://github.com/dhivagarpriyan/NIKE-CLONE-PAGE"
+    },
+    {
+      id: 6,
+      src: reactWeather,
+      Demo:"https://magnificent-semolina-386643.netlify.app/",
+      Code:"https://github.com/dhivagarpriyan/Weather-site"
+    },
+  ];
 
-        {
-            id:3,
-            src:reactSmooth
-        },
-
-        {
-            id:4,
-            src:arrayDestruct
-        },
-
-        {
-            id:5,
-            src:navbar
-        },
-
-        {
-            id:6,
-            src:reactPortfolio
-        },
-    ]
   return (
-    <div name="PORTFOLIO" className='w-full md:h-screen h-full bg-gradient-to-b from-black to-gray-800 text-white'>
-        <div className=' max-w-screen-lg flex flex-col justify-center mx-auto w-full h-full p-4'>
-            <div>
-                <h2 className=' text-gray-500 text-2xl font-bold border-b-4 border-gray-500'>PORTFOLIO</h2>
-                <p className='py-6 text-xl font-medium'>Here you can see some of my work here</p>
+    <div
+      name="PORTFOLIO"
+      className="bg-gradient-to-b from-black to-gray-800 w-full text-white  pb-8 pt-16 lg:px-16"
+    >
+      <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
+        <div className="pb-4">
+          <p className="text-4xl font-bold inline border-b-4 border-gray-500">
+            Portfolio
+          </p>
+          <p className="py-6">Check out some of my work right here</p>
+        </div>
+
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0 ">
+          {portfolios.map(({ id, src,Demo,Code}) => (
+            <div key={id} className="shadow-md shadow-gray-600 rounded-lg">
+              <img
+                src={src}
+                alt=""
+                width={1280}
+                height={720}
+                className="rounded-md duration-200 hover:scale-105 h-[174px]  object-cover "
+              />
+              <div className="flex items-center justify-center">
+                <button className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105">
+                  <a href={Demo}>DEMO</a>
+                </button>
+                <button className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105">
+                 <a href={Code}>Code</a> 
+                </button>
+              </div>
             </div>
-            <div className=' grid sm:grid-cols-2 md:grid-cols-3 gap-8  px-12 w-full '>
-         
-         {port.map(({id,src})=>(
-         <div key={id} className=' shadow-md shadow-gray-500 rounded-lg hover:scale-110 duration-200'>
-              <img src={src} alt=""  className='rounded-md '/>
-            <div className=' flex items-center justify-center'>
-              <button className='w-1/2 px-6 py-3  '>DEMO</button>
-              <button className='w-1/2 px-6 py-3'>CODE</button>
-             </div>
-         </div>
-         ))}
-        
-        
-      
+          ))}
         </div>
-        </div>
+      </div>
+    </div>
+  );
+};
 
-        
-        
-        
-      
-        </div>
-    )
-}
-
-export default Portfolio
+export default Portfolio;
