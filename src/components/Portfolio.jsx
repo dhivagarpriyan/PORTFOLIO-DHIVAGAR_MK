@@ -5,7 +5,8 @@ import NIKE from "../assets/portfolio/NIKE1.jpeg"
 import netflix from "../assets/portfolio/Netflix.jpg";
 import reactWeather from "../assets/portfolio/reactWeather.jpg";
 import RestaurantPage from "../assets/portfolio/Capture.PNG";
-import CRUD from "../assets/portfolio/MERN-BOOK STORE.jpg"
+import CRUD from "../assets/portfolio/MERN-BOOK STORE.jpg";
+import CHAT from "../assets/portfolio/Mern-chat_app.jpg"
 
 const Portfolio = () => {
   const portfolios = [
@@ -45,6 +46,12 @@ const Portfolio = () => {
       src: reactWeather,
       Demo:"https://magnificent-semolina-386643.netlify.app/",
       Code:"https://github.com/dhivagarpriyan/Weather-site"
+    },
+    {
+      id: 7,
+      src: CHAT,
+      Demo:"https://mern-chat-app-h80p.onrender.com/",
+      Code:"https://github.com/dhivagarpriyan/MERN-CHAT_APP/tree/main"
     },
   ];
 
